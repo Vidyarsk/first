@@ -1,18 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"  ng-app="myApp">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+   <script src="angular.min.js"></script>
+   <script src="app.js"></script>
 </head>
 <body>
-    <h1>Hello Vidya</h1>
-    <h2>Why????</h2>
-    <form>
-        <input type="button" value="Hello Vidya" onclick="helloVidya()">
-    </form>
+
+    <div ng-controller="myCtr">
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>id</th>
+                <th>Photo</th>
+                <th>delete</th>
+            </tr>
+            <tr ng-repeat="x in gituser">
+                <td>{{x.login}}</td>
+                <td>{{x.id}}</td>
+                <td><img ng-src="{{x.avatar_url}}"</td>
+                <td ng-click="removeItem(x)">delete</td>
+
+            </tr>
+        </table>
+    </div>
+
+
+
+
+</div>
 </body>
 </html>
